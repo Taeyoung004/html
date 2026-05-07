@@ -16,6 +16,9 @@ import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const path = window.location.pathname;
+  const filename = path.split('/').pop() || 'index.html';
+  const isHome = filename === 'index.html' || filename === '' || path === '/';
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,11 +27,20 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Prevent scrolling on home page
+  useEffect(() => {
+    if (isHome) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isHome]);
+
   // Simple routing based on URL filename
   const getPageComponent = () => {
-    const path = window.location.pathname;
-    const filename = path.split('/').pop() || 'index.html';
-
     switch (filename) {
       case 'index.html':
       case '':

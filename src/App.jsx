@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 // Layout & Utilities
 import Layout from './layouts/Layout';
-import ScrollToTop from './utils/ScrollToTop';
 import Loading from './components/ui/Loading';
 
 // Pages
@@ -22,29 +20,51 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
+  // Simple routing based on URL filename
+  const getPageComponent = () => {
+    const path = window.location.pathname;
+    const filename = path.split('/').pop() || 'index.html';
+
+    switch (filename) {
+      case 'index.html':
+      case '':
+        return <HomePage />;
+      case 'AboutUs.html':
+        return <AboutPage />;
+      case 'History.html':
+        return <HistoryPage />;
+      case 'Facility.html':
+        return <FacilityPage />;
+      case 'Location.html':
+        return <LocationPage />;
+      case 'Contact.html':
+        return <ContactPage />;
+      default:
+        // In dev mode with Vite, it might be /about or /history without .html
+        if (path.includes('about')) return <AboutPage />;
+        if (path.includes('history')) return <HistoryPage />;
+        if (path.includes('facility')) return <FacilityPage />;
+        if (path.includes('location')) return <LocationPage />;
+        if (path.includes('contact')) return <ContactPage />;
+        return <NotFoundPage />;
+    }
+  };
+
   return (
     <HelmetProvider>
-      <Router>
-        <ScrollToTop />
+      <div className="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen">
         {loading ? <Loading /> : null}
         
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <index element={<HomePage />} /> {/* This is a shorthand, but I'll use index property below */}
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="history" element={<HistoryPage />} />
-            <Route path="facility" element={<FacilityPage />} />
-            <Route path="location" element={<LocationPage />} />
-            <Route path="contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </Router>
+        <div className="flex flex-col min-h-screen">
+          <Layout>
+            {getPageComponent()}
+          </Layout>
+        </div>
+      </div>
     </HelmetProvider>
   );
 }

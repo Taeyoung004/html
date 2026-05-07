@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const NotFoundPage = () => {
@@ -14,12 +13,12 @@ const NotFoundPage = () => {
         <p className="text-slate-600 mb-8">
           요청하신 페이지가 삭제되었거나 주소가 변경되었을 수 있습니다.
         </p>
-        <Link
-          to="/"
+        <a
+          href="index.html"
           className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
         >
           홈으로 돌아가기
-        </Link>
+        </a>
       </div>
     </div>
   );

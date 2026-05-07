@@ -71,6 +71,11 @@ function App() {
       <div className="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen">
         {loading ? <Loading /> : null}
         
+        {/* DEBUG INDICATOR: If you see this, the code is updated */}
+        <div className="fixed bottom-2 right-2 z-[9999] bg-black/50 text-white text-[10px] px-2 py-1 rounded">
+          v2.0-MPA-TEST
+        </div>
+
         <div className="flex flex-col min-h-screen">
           <Layout>
             {getPageComponent()}

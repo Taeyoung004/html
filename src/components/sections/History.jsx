@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const historyData = [
-  { year: "2023", title: "글로벌 시장 진출", desc: "동남아시아 수출 1,000만불 달성" },
-  { year: "2020", title: "신공장 준공 및 확장", desc: "생산 캐파 2배 확장 및 스마트팩토리 도입" },
-  { year: "2015", title: "기업부설연구소 설립", desc: "자체 펌프 핵심 기술 특허 출원" },
-  { year: "2010", title: "비에이텍(BA TECH) 창립", desc: "산업용 펌프 제조 및 설비 엔지니어링 사업 시작" }
+  { year: "2017.12.19", title: "강원도지사 표창", desc: "" },
+  { year: "2013.02.19", title: "상호 및 대표자 변경", desc: "상호 : (주)강원유체 -> 비에이택(주)" },
+  { year: "2012.12.10", title: "벤처기업인증", desc: "중소기업청" },
+  { year: "2010.11.01", title: "(주)강원유체 설립", desc: "" }
 ];
 
 const History = () => {

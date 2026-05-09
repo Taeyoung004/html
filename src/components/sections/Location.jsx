@@ -30,7 +30,7 @@ const Location = () => {
           >
             {/* Embedded Google Map */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2319349887103!2d127.03063541530962!3d37.49847117981105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15112ec09c1%3A0xc3161c9ab22ea7b5!2z7ISc7Jq47Yq567OE7IucIOqwmOuCqOq1rCDthYztl6TrnoDroZwgMTIz!5e0!3m2!1sko!2skr!4v1628131362837!5m2!1sko!2skr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.7361436059323!2d127.73898439999999!3d37.84306249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3562e4261feffbab%3A0xc2ac431491561ac2!2z6rCV7JuQ7Yq667OE7J6Q7LmY67m4IEIOY2mOyynOyLnCBSUFZRKzZISA!5e0!3m2!1sko!2skr!4v1778313524834!5m2!1sko!2skr"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -52,15 +52,15 @@ const Location = () => {
               <div>
                 <h3 className="text-xl font-bold text-secondary mb-2">Head Office & Factory</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  서울특별시 강남구 테헤란로 123<br />
-                  비에이텍 빌딩 1층-3층
+                  강원특별자치도 춘천시 퇴계공단2길 64<br />
+                  (퇴계제2농공단지내)
                 </p>
               </div>
             </div>
 
             <div className="mt-8 space-y-4">
               <a 
-                href="https://maps.google.com/?q=서울특별시+강남구+테헤란로+123" 
+                href="https://maps.google.com/?q=강원특별자치도+춘천시+퇴계공단2길+64" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-full flex justify-center items-center gap-2 bg-primary hover:bg-blue-500 text-white py-3 rounded-lg font-semibold transition-colors shadow-md"

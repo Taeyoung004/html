@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400">대표전화</p>
-                  <p className="font-semibold text-lg">02-1234-5678</p>
+                  <p className="font-semibold text-lg">033-264-9243 / FAX : 033-251-5747</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

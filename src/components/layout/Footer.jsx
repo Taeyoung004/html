@@ -16,18 +16,15 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contact Info</h3>
           <ul className="text-sm space-y-2">
-            <li><strong>주소:</strong> 서울특별시 강남구 테헤란로 123, 비에이텍 빌딩</li>
-            <li><strong>전화:</strong> 02-1234-5678</li>
-            <li><strong>이메일:</strong> info@batech.example.com</li>
-            <li><strong>영업시간:</strong> 평일 09:00 - 18:00 (주말/공휴일 휴무)</li>
+            <li><strong>주소:</strong> 강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)</li>
+            <li><strong>전화:</strong> 033-264-9243 / FAX : 033-251-5747</li>
           </ul>
         </div>
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Company Info</h3>
           <ul className="text-sm space-y-2">
-            <li><strong>대표자:</strong> 홍길동</li>
-            <li><strong>사업자등록번호:</strong> 123-45-67890</li>
-            <li><strong>개인정보보호책임자:</strong> 김철수</li>
+            <li><strong>대표자:</strong> 조세연</li>
+            <li><strong>사업자등록번호:</strong> 221-81-42625</li>
           </ul>
         </div>
       </div>

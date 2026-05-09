@@ -30,15 +30,22 @@ const History = () => {
           {historyData.map((item, index) => (
             <motion.div 
               key={index}
-              className="mb-12 ml-6 md:ml-0 md:flex md:items-center md:justify-between w-full"
+              className="mb-12 ml-6 md:ml-0 md:flex md:items-center md:justify-between w-full relative"
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               {/* Timeline Dot */}
-              <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] md:left-1/2 md:-translate-x-1/2 border-4 border-white shadow"></div>
+              <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] md:left-1/2 md:-translate-x-1/2 border-4 border-white shadow z-10"></div>
               
+              {/* Connecting Line */}
+              <div className={`absolute top-2 h-0.5 bg-primary/30 z-0 
+                ${index % 2 === 0 
+                  ? 'md:right-1/2 md:left-auto md:w-20 left-[-6px] w-6' 
+                  : 'md:left-1/2 md:w-20 left-[-6px] w-6'}`}
+              ></div>
+
               <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:order-2 md:pl-8'}`}>
                 <h3 className="text-2xl font-bold text-primary mb-1">{item.year}</h3>
                 <h4 className="text-xl font-semibold text-secondary mb-2">{item.title}</h4>
